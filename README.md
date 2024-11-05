@@ -2,7 +2,7 @@
 Bienvenue sur mon portfolio ! Ici, vous trouverez une sélection de mes projets et expériences en tant que développeur.
 Ce site présente certains de mes meilleurs travaux et les technologies que j’utilise.  
 
-👉 [Visitez mon portfolio](https://username.github.io) 👈
+👉 [Visitez mon portfolio](https://emmagrave.github.io) 👈
 
 ## Contenu du portfolio
 - **À propos de moi** : Un aperçu de mon parcours et de mes compétences.
@@ -15,8 +15,8 @@ Ce site présente certains de mes meilleurs travaux et les technologies que j’
 - [GitHub Pages](https://pages.github.com/) pour l'hébergement
 
 ## Comment lancer le site en local
-- Clonez le dépôt : `git clone https://github.com/username/username.github.io`
-- Accédez au dossier : `cd username.github.io`
+- Clonez le dépôt : `git clone https://github.com/emmagrave/emmagrave.github.io`
+- Accédez au dossier : `cd emmagrave.github.io`
 - Ouvrez le fichier `index.html` dans un navigateur.
 
 ## Contact
