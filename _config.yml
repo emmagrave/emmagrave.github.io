@@ -13,22 +13,34 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: "Portfolio de Emma GRAVE"
+email: graveemma842@gmail.com
+description: "Découvrez mes projets de développement et mon parcours dans le domaine de l'informatique"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username:
+github_username: emmagrave
+# Infos personnelles (ajouter des champs personnalisés si nécessaire)
+author: "Emma GRAVE"
+location: "France"
+# SEO settings
+seo:
+  title: "Portfolio de Emma GRAVE"
+  description: "Portfolio professionnel de Emma GRAVE - Etudiante en informatique"
+
+# Social links (facile à utiliser dans les templates)
+social_links:
+  github: "https://github.com/graveemma"
+  linkedin: "https://www.linkedin.com/in/emma-grave-8100752a2/"
+
 
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap 
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
