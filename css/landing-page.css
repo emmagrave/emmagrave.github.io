@@ -26,12 +26,20 @@ h6 {
     font-weight: 400;
 }
 
+.navbar-default .navbar-nav > li > a {
+    color: #a17455; /* Couleur du texte normale */
+}
+
+.navbar-default .navbar-brand {
+    color: #a17455;
+}
+
 .intro-header {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
     padding-bottom: 50px;
     text-align: center;
-    color: #f8f8f8;
-    background: url(../img/intro-bg.jpg) no-repeat center center;
+    color: white;
+    background: url(../img/fond.jpg) no-repeat center center;
     background-size: cover;
 }
 
@@ -43,18 +51,18 @@ h6 {
 
 .intro-message > h1 {
     margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.8);
     font-size: 5em;
 }
 
 .intro-divider {
     width: 400px;
-    border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-top: 2px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
 }
 
 .intro-message > h3 {
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.8);
 }
 
 @media(max-width:767px) {
