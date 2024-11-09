@@ -1,5 +1,5 @@
 ---
 layout: landing
 title: EMMA GRAVE
-subTitle: Etudiante en informatique
+subTitle: Développeuse Web  - Etudiante en informatique
 ---
