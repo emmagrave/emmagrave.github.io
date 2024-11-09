@@ -117,6 +117,45 @@ h6 {
     border-top: 3px solid #e7e7e7;
 }
 
+.skills-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    color: #a17455;
+}
+
+.skills-container h2 {
+    text-align: center;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill-name {
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+}
+
+.progress {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #a17455;
+    width: 0; /* Commence à zéro pour l'animation */
+    border-radius: 5px;
+    transition: width 1s ease; /* Animation de la barre de progression */
+}
+
+
 .banner {
     padding: 100px 0;
     color: #f8f8f8;

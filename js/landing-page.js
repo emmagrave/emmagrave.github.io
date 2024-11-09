@@ -29,3 +29,28 @@ $('div.modal').on('show.bs.modal', function() {
 		}
 	}
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const progressBars = document.querySelectorAll(".progress-bar");
+
+    // Fonction pour vérifier si un élément est visible à l'écran
+    function isVisible(el) {
+        const rect = el.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom >= 0;
+    }
+
+    // Fonction pour déclencher l'animation des barres de progression
+    function animateProgressBars() {
+        progressBars.forEach(bar => {
+            const progress = bar.getAttribute("data-progress");
+            // Vérifier si la barre est visible et si elle n'est pas encore animée
+            if (isVisible(bar) && bar.style.width !== `${progress}%`) {
+                bar.style.width = `${progress}%`;
+            }
+        });
+    }
+
+    // Lancer l'animation lors du défilement
+    window.addEventListener("scroll", animateProgressBars);
+    animateProgressBars(); // Lancer l'animation si la section est déjà visible au chargement
+});
