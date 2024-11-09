@@ -54,3 +54,16 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("scroll", animateProgressBars);
     animateProgressBars(); // Lancer l'animation si la section est déjà visible au chargement
 });
+
+//TELECHARGEMENT DU CV :
+document.getElementById('download').addEventListener('click', function() { //quand on clique sur le bouton d'id 'download' :
+    // L'URL du PDF que vous souhaitez télécharger
+    const pdfUrl = 'CV-EmmaGrave.pdf';
+    // Créer un élément <a> invisible
+    const a = document.createElement('a');
+    a.href = pdfUrl; //le lien prend le nom du pdf
+    a.download = 'CV-GraveEmma.pdf'; // Nom du fichier lors du téléchargement
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});

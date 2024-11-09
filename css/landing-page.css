@@ -117,15 +117,32 @@ h6 {
     border-top: 3px solid #e7e7e7;
 }
 
-.skills-container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
+#skills {
     color: #a17455;
 }
 
-.skills-container h2 {
+#skills h2 {
     text-align: center;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 150px;
+    align-items: center;
+}
+
+.skills-container .cv-right {
+    flex: 1;
+    min-width: 200px;
+}
+
+.progress-bars {
+    margin-left: 100px;
+    margin-bottom: 50px;
+    flex: 1;
+    min-width: 300px;
 }
 
 .skill {
@@ -136,6 +153,7 @@ h6 {
     font-weight: bold;
     display: inline-block;
     width: 100px;
+    color: black;
 }
 
 .progress {
@@ -155,6 +173,42 @@ h6 {
     transition: width 1s ease; /* Animation de la barre de progression */
 }
 
+.cv-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#cv-img {
+    width: 100%; /* L'image prendra toute la largeur de son conteneur */
+    max-width: 400px; /* Vous pouvez ajuster la taille maximale si nécessaire */
+    height: auto; /* Pour conserver les proportions de l'image */
+    display: block;
+    margin-right: 100px;
+    margin-bottom: 20px;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cv-right #download {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 25px;
+    background-color: #a17455;
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+    border-radius: 10px;
+}
+.cv-right #download:hover {
+    background-color: black;
+    cursor: pointer;
+}
+.cv-right #download-png {
+    width: 10px;
+}
 
 .banner {
     padding: 100px 0;
