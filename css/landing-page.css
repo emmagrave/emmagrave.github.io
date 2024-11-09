@@ -210,6 +210,10 @@ h6 {
     width: 10px;
 }
 
+#about h2 {
+    color: #a17455;
+}
+
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
