@@ -29,3 +29,41 @@ $('div.modal').on('show.bs.modal', function() {
 		}
 	}
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const progressBars = document.querySelectorAll(".progress-bar");
+
+    // Fonction pour vérifier si un élément est visible à l'écran
+    function isVisible(el) {
+        const rect = el.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom >= 0;
+    }
+
+    // Fonction pour déclencher l'animation des barres de progression
+    function animateProgressBars() {
+        progressBars.forEach(bar => {
+            const progress = bar.getAttribute("data-progress");
+            // Vérifier si la barre est visible et si elle n'est pas encore animée
+            if (isVisible(bar) && bar.style.width !== `${progress}%`) {
+                bar.style.width = `${progress}%`;
+            }
+        });
+    }
+
+    // Lancer l'animation lors du défilement
+    window.addEventListener("scroll", animateProgressBars);
+    animateProgressBars(); // Lancer l'animation si la section est déjà visible au chargement
+});
+
+//TELECHARGEMENT DU CV :
+document.getElementById('download').addEventListener('click', function() { //quand on clique sur le bouton d'id 'download' :
+    // L'URL du PDF que vous souhaitez télécharger
+    const pdfUrl = 'CV-EmmaGrave.pdf';
+    // Créer un élément <a> invisible
+    const a = document.createElement('a');
+    a.href = pdfUrl; //le lien prend le nom du pdf
+    a.download = 'CV-GraveEmma.pdf'; // Nom du fichier lors du téléchargement
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});
