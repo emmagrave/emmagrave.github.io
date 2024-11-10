@@ -34,6 +34,8 @@ h6 {
     color: #a17455;
 }
 
+/*---------------- HEADER ---------------*/
+
 .intro-header {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
     padding-bottom: 50px;
@@ -116,6 +118,8 @@ h6 {
     width: 200px;
     border-top: 3px solid #e7e7e7;
 }
+
+/*---------------- SKILLS ---------------*/
 
 #skills {
     color: #a17455;
@@ -210,6 +214,8 @@ h6 {
     width: 10px;
 }
 
+/*---------------- ABOUT ---------------*/
+
 #about h2 {
     color: #a17455;
 }
@@ -226,6 +232,101 @@ h6 {
     display: block;
 }
 
+/*---------------- PROJETS ---------------*/
+
+#projects {
+    background: url(../img/fond2.jpg) no-repeat center center;
+    background-size: cover;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    padding: 20px;
+}
+
+#projects h2 {
+    color: #a17455;
+}
+
+.projetsPerso {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.blog {
+    grid-column: 1;
+    perspective: 1000px;
+    display: inline-block;
+    text-align: center;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.botVinted {
+    grid-column: 2;
+    perspective: 1000px;
+    text-align: center;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.blog2 {
+    grid-column: 3;
+    perspective: 1000px;
+    text-align: center;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.card {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.projetsPerso img {
+    width: 70%;
+    margin-bottom: 30px;
+}
+
+.projetsPerso img:hover {
+    cursor: pointer;
+}
+
+.card-back {
+    background-color: white;
+    border-radius: 10px;
+    transform: rotateY(180deg);
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.flipped .card {
+    transform: rotateY(180deg);
+}
+
+#projects h3 {
+    color: #a17455;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/*-------------------------------*/
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
