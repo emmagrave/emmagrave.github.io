@@ -67,3 +67,8 @@ document.getElementById('download').addEventListener('click', function() { //qua
     a.click();
     document.body.removeChild(a);
 });
+
+function toggleFlip(element) {
+    element.classList.toggle('flipped');
+}
+
