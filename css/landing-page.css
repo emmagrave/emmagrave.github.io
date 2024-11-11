@@ -319,12 +319,13 @@ h6 {
 
 .card-back {
     background-color: white;
-
+    border-radius: 10px;
     transform: rotateY(180deg);
     padding-left: 50px;
     padding-right: 50px;
     display: flex;
     align-items: center;
+    border-right: solid 1px black;
 }
 
 .flipped .card {
