@@ -50,12 +50,16 @@ h6 {
     font-weight: 400;
 }
 
+.navbar-default {
+    background-color: #a0b0a0;
+}
+
 .navbar-default .navbar-nav > li > a {
-    color: #a17455; /* Couleur du texte normale */
+    color: white; /* Couleur du texte normale */
 }
 
 .navbar-default .navbar-brand {
-    color: #a17455;
+    color: white;
 }
 
 /*---------------- HEADER ---------------*/
@@ -146,7 +150,7 @@ h6 {
 /*---------------- SKILLS ---------------*/
 
 #skills {
-    color: #a17455;
+    color: #a0b0a0;
 }
 
 #skills h2 {
@@ -195,7 +199,7 @@ h6 {
 
 .progress-bar {
     height: 100%;
-    background-color: #a17455;
+    background-color: #d7ccc8;
     width: 0; /* Commence à zéro pour l'animation */
     border-radius: 5px;
     transition: width 1s ease; /* Animation de la barre de progression */
@@ -224,7 +228,7 @@ h6 {
     display: inline-flex;
     align-items: center;
     padding: 15px 25px;
-    background-color: #a17455;
+    background-color: #a0b0a0;
     color: white;
     text-decoration: none;
     font-size: 10px;
@@ -391,7 +395,7 @@ h6 {
 }
 
 #projects h3 {
-    color: #a17455;
+    color: #a0b0a0;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -501,12 +505,12 @@ h6 {
 
 footer {
     padding: 50px 0;
-    background-color: #f8f8f8;
-    color: #a17455;
+    background-color: #a0b0a0;
+    color: white;
 }
 
 footer a {
-    color: #a17455;
+    color: white;
 }
 
 p.copyright {
