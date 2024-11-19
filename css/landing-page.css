@@ -241,6 +241,10 @@ h6 {
     margin-bottom: 50px;
     text-align: center;
     padding: 20px;
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Horizontally centers content */
+    align-items: center; /* Vertically centers content */
+    min-height: 100vh;
 }
 
 #projects h2 {
@@ -252,6 +256,8 @@ h6 {
     gap: 30px;
     grid-template-columns: 380px 380px 380px;
     padding-bottom: 45px;
+    justify-content: center; /* Centers the grid horizontally */
+    align-items: center;
 }
 
 .blog {
