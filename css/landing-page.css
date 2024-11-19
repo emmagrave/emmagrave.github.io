@@ -35,10 +35,15 @@ h6 {
 }
 
 .intro-header {
-    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-top: 50px;
     padding-bottom: 50px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: white;
+    width: 100vw;
+    height: 100vh;
     background: url(../img/fond.jpg) no-repeat center center;
     background-size: cover;
 }
