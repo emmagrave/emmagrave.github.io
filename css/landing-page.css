@@ -432,6 +432,7 @@ h6 {
 #news {
     margin-top: 50px;
     padding: 20px;
+    margin-bottom: 50px;
 }
 
 #news h2 {
@@ -474,12 +475,10 @@ h6 {
     display: inline-block;
     grid-column: 1;
     position: relative;
-    border: 1px solid black;
 }
 #but1 .img img {
     display: block;
     width: 100%;
-    border: 1px solid white; /* Bordure bleue */
 }
 #but1 #Forum {
     width: 290px;
@@ -490,9 +489,8 @@ h6 {
     padding-left: 30px;
     padding-right: 30px;
     align-items: center;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+    background-color: #f4f2f2;
+    border-left: none;
 }
 #but1 .numeriquelles {
     display: grid;
@@ -503,7 +501,6 @@ h6 {
     display: inline-block;
     grid-column: 1;
     position: relative;
-    border: 1px solid black;
 }
 #but1 #numeriquelles {
     width: 290px;
@@ -514,9 +511,8 @@ h6 {
     padding-left: 30px;
     padding-right: 30px;
     align-items: center;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+    background-color: #f4f2f2;
+    border-left: none;
 }
 #but1 .jpo {
     display: grid;
@@ -527,7 +523,6 @@ h6 {
     display: inline-block;
     grid-column: 1;
     position: relative;
-    border: 1px solid black;
 }
 
 #but1 #JPO {
@@ -539,10 +534,15 @@ h6 {
     padding-left: 30px;
     padding-right: 30px;
     align-items: center;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+    background-color: #f4f2f2;
+    border-left: none;
 }
+
+#but1 .text:hover {
+    background-color: #fbfff7; /* Change légèrement la couleur d'arrière-plan */
+    transition: background-color 0.3s ease; /* Ajoute une transition douce */
+}
+
 
 /*----------- CONTACT ----------------*/
 .banner {
