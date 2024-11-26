@@ -216,14 +216,20 @@ h6 {
 
 /*---------------- ABOUT ---------------*/
 
+#about {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #about h2 {
     color: #a17455;
 }
 
 .about-img {
     width: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 .about-img img {
@@ -237,9 +243,12 @@ h6 {
 #projects {
     background: url(../img/fond2.jpg) no-repeat center center;
     background-size: cover;
-    margin-top: 50px;
+    padding-top: 50px;
     text-align: center;
-    padding: 20px;
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Horizontally centers content */
+    align-items: center; /* Vertically centers content */
+    min-height: 100vh;
 }
 
 #projects h2 {
@@ -251,6 +260,8 @@ h6 {
     gap: 30px;
     grid-template-columns: 380px 380px 380px;
     padding-bottom: 45px;
+    justify-content: center; /* Centers the grid horizontally */
+    align-items: center;
 }
 
 .blog {
@@ -336,7 +347,7 @@ h6 {
     text-align: center;
     margin-bottom: 20px;
 }
-/*----------- CONTACT ----------------*/
+/*-------------------------------*/
 .banner {
     padding: 30px 0;
     background: url(../img/banner-bg.jpg) no-repeat center center;
@@ -387,11 +398,6 @@ h6 {
 footer {
     padding: 50px 0;
     background-color: #f8f8f8;
-    color: #a17455;
-}
-
-footer a {
-    color: #a17455;
 }
 
 p.copyright {
