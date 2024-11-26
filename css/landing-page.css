@@ -443,9 +443,9 @@ h6 {
 
 /*----------- NEWS ----------------*/
 #news {
-    margin-top: 50px;
     padding: 20px;
     margin-bottom: 50px;
+    padding-top: 50px;
 }
 
 #news h2 {
