@@ -55,15 +55,37 @@ document.addEventListener("DOMContentLoaded", function() {
     animateProgressBars(); // Lancer l'animation si la section est déjà visible au chargement
 });
 
-//TELECHARGEMENT DU CV :
-document.getElementById('download').addEventListener('click', function() { //quand on clique sur le bouton d'id 'download' :
-    // L'URL du PDF que vous souhaitez télécharger
-    const pdfUrl = 'CV-EmmaGrave.pdf';
-    // Créer un élément <a> invisible
-    const a = document.createElement('a');
-    a.href = pdfUrl; //le lien prend le nom du pdf
-    a.download = 'CV-GraveEmma.pdf'; // Nom du fichier lors du téléchargement
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+document.getElementById("download").addEventListener("click", function() {
+    // Affiche le fond flouté avec animation
+    const blurBackground = document.getElementById("blur-background");
+    blurBackground.classList.add("active");
+    document.body.classList.add("blurred");
+
+    // Crée la fenêtre popup
+    const popup = document.createElement("div");
+    popup.id = "popup";
+    popup.innerHTML = `
+        <h3>Choisissez la langue du CV</h3>
+        <div class="langues">
+            <button id="cv-francais">CV en Français</button>
+            <button id="cv-anglais">CV en Anglais</button>
+            <button id="close-popup" style="margin-top: 10px;">Fermer</button>
+        </div>
+    `;
+    document.body.appendChild(popup);
+
+    // Événements pour les boutons
+    document.getElementById("cv-francais").addEventListener("click", function() {
+        window.open('/CV-EmmaGrave.pdf', '_blank');
+    });
+
+    document.getElementById("cv-anglais").addEventListener("click", function() {
+        window.open('/Anglais-CV-EmmaGrave.pdf', '_blank');
+    });
+
+    document.getElementById("close-popup").addEventListener("click", function() {
+        popup.remove();
+        blurBackground.classList.remove("active");
+        document.body.classList.remove("blurred");
+    });
 });
