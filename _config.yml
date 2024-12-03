@@ -29,9 +29,14 @@ seo:
   description: "Portfolio professionnel de Emma GRAVE - Etudiante en informatique"
 
 # Social links (facile à utiliser dans les templates)
-social_links:
-  github: "https://github.com/graveemma"
-  linkedin: "https://www.linkedin.com/in/emma-grave-8100752a2/"
+social:
+  - title: "github"
+    url: "https://github.com/emmagrave"
+  - title: "linkedin"
+    url: "https://www.linkedin.com/in/emma-grave/"
+  - title: "email"
+    url: "mailto:graveemma842@gmail.com"
+
 
 
 # Build settings
