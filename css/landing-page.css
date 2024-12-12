@@ -212,18 +212,33 @@ h6 {
 
 #about h2 {
     color: #a17455;
-}
-
-.about-img {
-    width: 100%;
     margin-top: 20px;
-    margin-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 10px;
 }
 
-.about-img img {
-    width: 100%;
+#about .row {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+}
+
+#about img {
+    display: grid;
+    grid-column: 1;
+    width: 400px;
     height: auto;
-    display: block;
+    margin-top: 130px;
+}
+
+#about .text {
+    grid-column: 2;
+    display: flex; /* Permet de structurer le contenu */
+    flex-direction: column;
+    justify-content: flex-start; /* Alignement des éléments */
+    gap: 10px;
+    width: 600px;
+    margin-left: 150px;
 }
 
 .banner {
