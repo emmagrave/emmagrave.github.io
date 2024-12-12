@@ -364,7 +364,7 @@ body.blurred {
     color: #a17455;
     margin-top: 20px;
     padding-top: 40px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 #about .row {
@@ -389,6 +389,7 @@ body.blurred {
     gap: 10px;
     width: 600px;
     margin-left: 150px;
+    font-size: 13px;
 }
 
 /*---------------- PROJETS ---------------*/
