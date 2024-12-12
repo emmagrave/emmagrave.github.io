@@ -425,6 +425,51 @@ body.blurred {
     margin-left: 150px;
     font-size: 13px;
 }
+/* Pour les tablettes */
+@media (max-width: 768px) {
+    #about .row {
+        grid-template-columns: 1fr; /* Une seule colonne */
+        text-align: center; /* Centre le texte */
+    }
+
+    #about img {
+        grid-column: 1; /* L'image reste en haut */
+        margin-top: 0;
+        margin-bottom: 20px; /* Espacement entre l'image et le texte */
+    }
+
+    #about .text {
+        grid-column: 1; /* Texte sous l'image */
+        font-size: 14px;
+    }
+}
+/* Pour les mobiles */
+@media (max-width: 480px) {
+    #about {
+        display: grid;
+        padding: 10px; /* Réduit le padding général */
+        grid-template-rows: 1fr 1fr;
+        margin-bottom: 220px;
+    }
+
+    #about h2 {
+        font-size: 20px; /* Réduit la taille du titre */
+    }
+
+    #about img {
+        max-width: 300px; /* Image plus petite */
+        grid-row: 2;
+        margin-left: 25px;
+    }
+
+    #about .text {
+        font-size: 11px; /* Texte plus petit */
+        gap: 10px; /* Réduit l'espacement entre les paragraphes */
+        width: 300px;
+        margin-left: 10px;
+        grid-row: 1;
+    }
+}
 
 /*---------------- PROJETS ---------------*/
 
