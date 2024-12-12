@@ -345,42 +345,64 @@ body.blurred {
     }
 }
 
+/* Mobile-friendly styles */
 @media (max-width: 768px) {
     .skills-container {
-        flex-direction: column;
+        flex-direction: column; /* Aligne les items en colonne */
         align-items: center;
-        gap: 30px;
+        display: grid;
+        grid-template-rows: repeat(5, auto); /* Crée des lignes pour chaque élément */
+        grid-template-columns: 1fr; /* Colonne unique */
     }
 
     .progress-bars {
-        margin-left: 0;
-        margin-right: 0;
-        padding: 0 15px;
+        min-width: 100%; /* Permet au conteneur de s'adapter à la largeur de l'écran */
+        margin-left: 0px;
     }
 
-    #skills {
-        padding-bottom: 30px;
+    .carre1, .carre2, .carre3, .carre4 {
+        position: relative; /* Utilisation de position relative pour l'alignement vertical */
+        top: auto; /* Supprime les positions fixes */
+        left: auto;
+    }
+
+    .cv-right {
+        grid-row: 5; /* Place .cv-right en dessous des autres éléments */
     }
 }
 
 @media (max-width: 480px) {
-    #skills h2 {
-        font-size: 1.5em;
+    .skills-container {
+        padding: 10px;
+        display: grid;
+        grid-template-rows: repeat(5, auto); /* Crée des lignes pour chaque élément */
+        grid-template-columns: 1fr; /* Colonne unique */
+    }
+
+    .progress-bar {
+        grid-row: 1;
+    }
+
+    .carre1, .carre2, .carre3, .carre4 {
+        width: 100%; /* Les carrés prennent 100% de la largeur de l'écran */
+    }
+
+    /* On garde la positionnement en colonne, chaque carré sera sous le précédent */
+    .carre1, .carre2, .carre3, .carre4 {
+        position: relative; /* Positionnement relatif pour un alignement vertical fluide */
     }
 
     .cv-right {
-        text-align: center;
-    }
-
-    #cv-img {
-        max-width: 250px;
-        margin-left: 50%;
-        margin-right: 50%;
+        grid-row: 5; /* Place .cv-right en dessous des autres éléments */
+        margin-left: 80px;
     }
 
     .cv-right #download {
-        padding: 8px 16px;
-        font-size: 10px;
+        margin-right: 100px;
+    }
+
+    #skills h2 {
+        font-size: 1.5em; /* Réduit la taille du titre */
     }
 }
 
@@ -424,6 +446,51 @@ body.blurred {
     width: 600px;
     margin-left: 150px;
     font-size: 13px;
+}
+/* Pour les tablettes */
+@media (max-width: 768px) {
+    #about .row {
+        grid-template-columns: 1fr; /* Une seule colonne */
+        text-align: center; /* Centre le texte */
+    }
+
+    #about img {
+        grid-column: 1; /* L'image reste en haut */
+        margin-top: 0;
+        margin-bottom: 20px; /* Espacement entre l'image et le texte */
+    }
+
+    #about .text {
+        grid-column: 1; /* Texte sous l'image */
+        font-size: 14px;
+    }
+}
+/* Pour les mobiles */
+@media (max-width: 480px) {
+    #about {
+        display: grid;
+        padding: 10px; /* Réduit le padding général */
+        grid-template-rows: 1fr 1fr;
+        margin-bottom: 220px;
+    }
+
+    #about h2 {
+        font-size: 20px; /* Réduit la taille du titre */
+    }
+
+    #about img {
+        max-width: 300px; /* Image plus petite */
+        grid-row: 2;
+        margin-left: 25px;
+    }
+
+    #about .text {
+        font-size: 11px; /* Texte plus petit */
+        gap: 10px; /* Réduit l'espacement entre les paragraphes */
+        width: 300px;
+        margin-left: 10px;
+        grid-row: 1;
+    }
 }
 
 /*---------------- PROJETS ---------------*/
