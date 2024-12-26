@@ -151,3 +151,24 @@ function toggleFlip(element) {
     element.classList.toggle('flipped');
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector('.navbar-fixed-top');
+    const homeSection = document.querySelector('#home');
+
+    // Vérifier si les éléments existent
+    if (navbar && homeSection) {
+        window.addEventListener('scroll', () => {
+            // Obtenez la position de la section #home
+            const homeRect = homeSection.getBoundingClientRect();
+
+            // Vérifiez si la section #home est complètement défilée (si la partie supérieure de la section est hors de l'écran)
+            if (homeRect.bottom <= 0) {
+                navbar.classList.add('visible');
+                navbar.classList.remove('hidden');
+            } else {
+                navbar.classList.add('hidden');
+                navbar.classList.remove('visible');
+            }
+        });
+    }
+});

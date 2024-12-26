@@ -51,7 +51,7 @@ h6 {
 }
 
 .navbar-default {
-    background-color: #2C3E50;
+    background-color: #ab1d79;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -62,37 +62,149 @@ h6 {
     color: white;
 }
 
+.navbar-fixed-top.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-fixed-top.visible {
+    transform: translateY(0);
+}
+
 /*---------------- HEADER ---------------*/
 
-.intro-header {
-    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
-    text-align: center;
-    color: white;
-    background: url(../img/fond.jpg) no-repeat center center;
+#home {
+    width: 1920px;
+    height: 100vh;
+    /*background-color: rgba(0, 0, 0, 1.00);*/
+    padding: 0px 0px 0px 0px;
+    background-image: url("/img/homepage1.png");
     background-size: cover;
+    background-repeat: no-repeat;
 }
+
+#home .container {
+    margin-left: 110px;
+    margin-top: -30px;
+}
+
+.intro-header {
+    width: 1920px;
+    height: 1022.00px;
+    /*background-color: rgba(215, 215, 215, 1.00);*/
+    padding: 0px 0px 0px 0px;
+    position: absolute;
+    top: 0px;
+    left: -2px
+}
+
+.intro-header #rectangle {
+    padding: 0px 0px 0px 0px;
+    position: absolute;
+    top: -191.9998779296875px;
+    left: 983.5px;
+    transform: rotate(9.667165861280896deg);
+}
+
+.navigation {
+    width: 637px;
+    height: 46px;
+    position: relative;
+    top: 100px;
+    left: 50px;
+    overflow: hidden;
+    margin-top: -30px;
+}
+
+.v1_494 {
+    width: 147px;
+    color: #ab1d79;
+    position: absolute;
+    top: 0px;
+    left: 510px;
+    font-weight: Bold;
+    font-size: 20px;
+    opacity: 1;
+    text-align: center;
+}
+.v1_494:hover {
+    text-decoration: none;
+    color: #b6659a;
+}
+
+.v1_495 {
+    width: 207px;
+    color: #ab1d79;
+    position: absolute;
+    top: 0px;
+    left: 310px;
+    font-weight: Bold;
+    font-size: 20px;
+    opacity: 1;
+    text-align: center;
+}
+.v1_495:hover {
+    text-decoration: none;
+    color: #b6659a;
+}
+
+.v1_496 {
+    width: 147px;
+    color: #ab1d79;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    font-weight: Bold;
+    font-size: 20px;
+    opacity: 1;
+    text-align: center;
+}
+.v1_496:hover {
+    text-decoration: none;
+    color: #b6659a;
+}
+
+.v1_497 {
+    width: 167px;
+    color: #ab1d79;
+    position: absolute;
+    top: 0px;
+    left: 130px;
+    font-weight: Bold;
+    font-size: 20px;
+    opacity: 1;
+    text-align: center;
+}
+.v1_497:hover {
+    text-decoration: none;
+    color: #b6659a;
+}
+
 
 .intro-message {
     position: relative;
-    padding-top: 20%;
     padding-bottom: 20%;
 }
 
 .intro-message > h1 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.8);
+    text-shadow: 2px 2px 3px rgba(171,29,121,0.8);
     font-size: 5em;
+    margin: 0 0 0 30px;
 }
 
 .intro-divider {
     width: 400px;
     border-top: 2px solid #f8f8f8;
     border-bottom: 1px solid rgba(0,0,0,0.4);
+    margin-left: 60px;
 }
 
 .intro-message > h3 {
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.8);
+    text-shadow: 2px 2px 3px rgba(171,29,121,0.8);
+}
+
+#home ul {
+    margin-left: 55px;
 }
 
 @media(max-width:767px) {
