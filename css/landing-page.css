@@ -18,6 +18,53 @@
     font-style: normal;
 }
 
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Style du logo */
+#preloader img {
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite, grow 1s ease-in-out infinite alternate;
+}
+
+/* Animation de rotation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animation de grossissement */
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+/* Masquer le préchargeur une fois terminé */
+body.loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+}
+
 
 body,
 html {
@@ -51,11 +98,11 @@ h6 {
 }
 
 .navbar-default {
-    background-color: #ab1d79;
+    background-color: #b6659a;
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: white; /* Couleur du texte normale */
+    color: white;
 }
 
 .navbar-default .navbar-brand {
@@ -74,9 +121,8 @@ h6 {
 /*---------------- HEADER ---------------*/
 
 #home {
-    width: 1920px;
+    width: 100vw;
     height: 100vh;
-    /*background-color: rgba(0, 0, 0, 1.00);*/
     padding: 0px 0px 0px 0px;
     background-image: url("/img/homepage1.png");
     background-size: cover;
@@ -89,25 +135,14 @@ h6 {
 }
 
 .intro-header {
-    width: 1920px;
-    height: 1022.00px;
-    /*background-color: rgba(215, 215, 215, 1.00);*/
     padding: 0px 0px 0px 0px;
     position: absolute;
     top: 0px;
     left: -2px
 }
 
-.intro-header #rectangle {
-    padding: 0px 0px 0px 0px;
-    position: absolute;
-    top: -191.9998779296875px;
-    left: 983.5px;
-    transform: rotate(9.667165861280896deg);
-}
-
 .navigation {
-    width: 637px;
+    width: 697px;
     height: 46px;
     position: relative;
     top: 100px;
@@ -117,11 +152,11 @@ h6 {
 }
 
 .v1_494 {
-    width: 147px;
+    width: 217px;
     color: #ab1d79;
     position: absolute;
-    top: 0px;
-    left: 510px;
+    top: 7px;
+    left: 490px;
     font-weight: Bold;
     font-size: 20px;
     opacity: 1;
@@ -136,8 +171,8 @@ h6 {
     width: 207px;
     color: #ab1d79;
     position: absolute;
-    top: 0px;
-    left: 310px;
+    top: 7px;
+    left: 300px;
     font-weight: Bold;
     font-size: 20px;
     opacity: 1;
@@ -168,8 +203,8 @@ h6 {
     width: 167px;
     color: #ab1d79;
     position: absolute;
-    top: 0px;
-    left: 130px;
+    top: 7px;
+    left: 160px;
     font-weight: Bold;
     font-size: 20px;
     opacity: 1;
@@ -190,6 +225,12 @@ h6 {
     text-shadow: 2px 2px 3px rgba(171,29,121,0.8);
     font-size: 5em;
     margin: 0 0 0 30px;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.intro-message > h1:hover {
+    transform: scale(1.2);
 }
 
 .intro-divider {
@@ -201,6 +242,12 @@ h6 {
 
 .intro-message > h3 {
     text-shadow: 2px 2px 3px rgba(171,29,121,0.8);
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.intro-message > h3:hover {
+    transform: scale(1.2);
 }
 
 #home ul {
@@ -262,13 +309,17 @@ h6 {
 /*---------------- SKILLS ---------------*/
 
 #skills {
-    color: #2C3E50;
     padding-top: 50px;
 }
 
 #skills h2 {
-    color: #a17455;
+    font-size: 3em;
+    text-shadow: 2px 2px 3px rgba(171,29,121,0.8);
     text-align: center;
+}
+
+#skills h3 {
+    color: #ab1d79;
 }
 
 .skills-container {
@@ -311,9 +362,9 @@ h6 {
 }
 
 .carre4 {
-    top: 150px; /* Décalage vers le bas */
-    left: 420px; /* Chevauche légèrement à droite de carre1 */
-    z-index: 2; /* S'assurer que ce carré est au-dessus */
+    top: 150px;
+    left: 420px;
+    z-index: 2;
 }
 
 .carre1, .carre2, .carre3, .carre4 {
@@ -347,9 +398,9 @@ h6 {
 .progress-bar {
     height: 100%;
     background-color: #cdc1bd;
-    width: 0; /* Commence à zéro pour l'animation */
+    width: 0;
     border-radius: 5px;
-    transition: width 1s ease; /* Animation de la barre de progression */
+    transition: width 1s ease;
 }
 
 .cv-right {
@@ -361,13 +412,13 @@ h6 {
 }
 
 #cv-img {
-    width: 80%; /* L'image prendra toute la largeur de son conteneur */
-    max-width: 400px; /* Vous pouvez ajuster la taille maximale si nécessaire */
-    height: auto; /* Pour conserver les proportions de l'image */
+    width: 80%;
+    max-width: 400px;
+    height: auto;
     display: block;
     margin-right: 100px;
     margin-bottom: 20px;
-    justify-content: center; /* Centre horizontalement */
+    justify-content: center;
     align-items: center;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
@@ -376,7 +427,7 @@ h6 {
     display: inline-flex;
     align-items: center;
     padding: 15px 25px;
-    background-color: #2C3E50;
+    background-color: #ab1d79;
     color: white;
     text-decoration: none;
     font-size: 10px;
@@ -392,7 +443,7 @@ h6 {
 }
 
 body.blurred {
-    overflow: hidden; /* Empêche le défilement lorsqu'on affiche le popup */
+    overflow: hidden;
 }
 
 #blur-background {
@@ -401,12 +452,12 @@ body.blurred {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Couche semi-transparente */
-    backdrop-filter: blur(8px); /* Applique l'effet de flou */
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
     z-index: 999;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease; /* Animation de transition */
+    transition: opacity 0.3s ease;
 }
 
 #blur-background.active {
@@ -457,29 +508,28 @@ body.blurred {
     }
 }
 
-/* Mobile-friendly styles */
 @media (max-width: 768px) {
     .skills-container {
-        flex-direction: column; /* Aligne les items en colonne */
+        flex-direction: column;
         align-items: center;
         display: grid;
-        grid-template-rows: repeat(5, auto); /* Crée des lignes pour chaque élément */
-        grid-template-columns: 1fr; /* Colonne unique */
+        grid-template-rows: repeat(5, auto);
+        grid-template-columns: 1fr;
     }
 
     .progress-bars {
-        min-width: 100%; /* Permet au conteneur de s'adapter à la largeur de l'écran */
+        min-width: 100%;
         margin-left: 0px;
     }
 
     .carre1, .carre2, .carre3, .carre4 {
-        position: relative; /* Utilisation de position relative pour l'alignement vertical */
-        top: auto; /* Supprime les positions fixes */
+        position: relative;
+        top: auto;
         left: auto;
     }
 
     .cv-right {
-        grid-row: 5; /* Place .cv-right en dessous des autres éléments */
+        grid-row: 5;
     }
 }
 
@@ -487,8 +537,8 @@ body.blurred {
     .skills-container {
         padding: 10px;
         display: grid;
-        grid-template-rows: repeat(5, auto); /* Crée des lignes pour chaque élément */
-        grid-template-columns: 1fr; /* Colonne unique */
+        grid-template-rows: repeat(5, auto);
+        grid-template-columns: 1fr;
     }
 
     .progress-bar {
@@ -496,16 +546,15 @@ body.blurred {
     }
 
     .carre1, .carre2, .carre3, .carre4 {
-        width: 100%; /* Les carrés prennent 100% de la largeur de l'écran */
+        width: 100%;
     }
 
-    /* On garde la positionnement en colonne, chaque carré sera sous le précédent */
     .carre1, .carre2, .carre3, .carre4 {
-        position: relative; /* Positionnement relatif pour un alignement vertical fluide */
+        position: relative;
     }
 
     .cv-right {
-        grid-row: 5; /* Place .cv-right en dessous des autres éléments */
+        grid-row: 5;
         margin-left: 80px;
     }
 
@@ -514,7 +563,7 @@ body.blurred {
     }
 
     #skills h2 {
-        font-size: 1.5em; /* Réduit la taille du titre */
+        font-size: 1.5em;
     }
 }
 
@@ -526,79 +575,95 @@ body.blurred {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("/img/about.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #about h2 {
-    color: #a17455;
-    margin-top: 20px;
-    padding-top: 40px;
-    padding-bottom: 20px;
+    background-color: white;
+    margin-top: 150px;
+    font-size: 3em;
+    padding: 3px;
+    text-shadow: 2px 2px 3px rgba(171,29,121,0.8);
 }
 
 #about .row {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 20px;
-}
-
-#about img {
-    display: grid;
-    grid-column: 1;
-    width: 400px;
-    height: auto;
-    margin-top: 130px;
-}
-
-#about .text {
-    grid-column: 2;
-    display: flex; /* Permet de structurer le contenu */
-    flex-direction: column;
-    justify-content: flex-start; /* Alignement des éléments */
-    gap: 10px;
-    width: 600px;
-    margin-left: 150px;
     font-size: 13px;
+    width: 100%;
 }
-/* Pour les tablettes */
+
+#about .part1 {
+    position: relative;
+    width: 490px;
+    left: 70px;
+    top: 40px;
+    text-align: left;
+}
+
+#about .part1 p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#about .part2 {
+    position: relative;
+    width: 400px;
+    left: 800px;
+    top: -150px;
+    text-align: right;
+    font-size: 16px;
+}
+
+#about a {
+    position: relative;
+    box-shadow: 2px 2px 3px rgba(171,29,121,0.8);
+    top: -100px;
+}
+
+#about a:hover {
+    transform: scale(1.2);
+}
+
 @media (max-width: 768px) {
     #about .row {
-        grid-template-columns: 1fr; /* Une seule colonne */
-        text-align: center; /* Centre le texte */
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 
     #about img {
-        grid-column: 1; /* L'image reste en haut */
+        grid-column: 1;
         margin-top: 0;
-        margin-bottom: 20px; /* Espacement entre l'image et le texte */
+        margin-bottom: 20px;
     }
 
     #about .text {
-        grid-column: 1; /* Texte sous l'image */
+        grid-column: 1;
         font-size: 14px;
     }
 }
-/* Pour les mobiles */
+
 @media (max-width: 480px) {
     #about {
         display: grid;
-        padding: 10px; /* Réduit le padding général */
+        padding: 10px;
         grid-template-rows: 1fr 1fr;
         margin-bottom: 220px;
     }
 
     #about h2 {
-        font-size: 20px; /* Réduit la taille du titre */
+        font-size: 20px;
     }
 
     #about img {
-        max-width: 300px; /* Image plus petite */
+        max-width: 300px;
         grid-row: 2;
         margin-left: 25px;
     }
 
     #about .text {
-        font-size: 11px; /* Texte plus petit */
-        gap: 10px; /* Réduit l'espacement entre les paragraphes */
+        font-size: 11px;
+        gap: 10px;
         width: 300px;
         margin-left: 10px;
         grid-row: 1;
@@ -612,14 +677,15 @@ body.blurred {
     background-size: cover;
     padding-top: 50px;
     text-align: center;
-    display: flex; /* Flexbox for centering */
-    justify-content: center; /* Horizontally centers content */
-    align-items: center; /* Vertically centers content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
 }
 
 #projects h2 {
-    color: #a17455;
+    font-size: 3em;
+    text-shadow: 2px 2px 3px rgba(171,29,121,0.8);
     width: 800px;
     padding: 10px 0px 10px 400px;
     backdrop-filter: blur(10px);
@@ -630,7 +696,7 @@ body.blurred {
     gap: 30px;
     grid-template-columns: 380px 380px 380px;
     padding-bottom: 45px;
-    justify-content: center; /* Centers the grid horizontally */
+    justify-content: center; 
     align-items: center;
 }
 
@@ -713,7 +779,7 @@ body.blurred {
 }
 
 #projects h3 {
-    color: #2C3E50;
+    color: #ab1d79;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -798,14 +864,16 @@ body.blurred {
 
 /*----------- NEWS ----------------*/
 #news {
-    padding: 20px;
     margin-bottom: 50px;
-    padding-top: 50px;
+    padding: 50px 20px 20px;
+    background-image: url("/img/actus-portfolio.png");
+    background-repeat: no-repeat;
 }
 
 #news h2 {
-    color: #a17455;
     text-align: center;
+    font-size: 3em;
+    text-shadow: 2px 2px 3px rgba(171,29,121,0.8);
 }
 
 #news hr {
@@ -814,7 +882,7 @@ body.blurred {
 }
 
 #news h3 {
-    color: #a17455;
+    color: #ab1d79;
 }
 
 #news .intro {
@@ -907,8 +975,70 @@ body.blurred {
 }
 
 #but1 .text:hover {
-    background-color: #fbfff7;
-    transition: background-color 0.3s ease;
+}
+
+#but2 {
+    margin-left: 100px;
+}
+#but2 .title_b {
+    font-weight: bold;
+    font-size: 20px;
+}
+#but2 .date{
+    font-style: italic;
+    font-size: 15px;
+}
+#but2 .img img {
+    display: block;
+    width: 100%;
+}
+#but2 .numeriquelles {
+    display: grid;
+    grid-template-columns: 290px 600px;
+    margin-left: 100px;
+}
+#but2 .numeriquelles .img {
+    display: inline-block;
+    grid-column: 1;
+    position: relative;
+}
+#but2 #numeriquelles {
+    width: 290px;
+}
+#but2 .numeriquelles .text {
+    display: flex;
+    grid-column: 2;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+    background-color: #f4f2f2;
+    border-left: none;
+}
+#but2 .jpo {
+    display: grid;
+    grid-template-columns: 290px 600px;
+    margin-left: 100px;
+}
+#but2 .jpo .img {
+    display: inline-block;
+    grid-column: 1;
+    position: relative;
+}
+
+#but2 #JPO {
+    width: 290px;
+}
+#but2 .jpo .text {
+    display: flex;
+    grid-column: 2;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+    background-color: #f4f2f2;
+    border-left: none;
+}
+
+#but2 .text:hover {
 }
 
 @media (max-width: 1024px) {
@@ -997,16 +1127,18 @@ body.blurred {
 
 /*----------- CONTACT ----------------*/
 .banner {
-    padding: 30px 0;
-    background: url(../img/banner-bg.jpg) no-repeat center center;
+    background-image: url("/img/contact.png");
     background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 100vh;
 }
 
 .banner h2 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    margin-top: 150px;
+    margin-bottom: 100px;
     font-size: 3em;
-    color: white;
+    text-shadow: 2px 2px 3px rgba(171,29,121,0.8);
 }
 
 .banner ul {
@@ -1014,7 +1146,6 @@ body.blurred {
 }
 
 .banner-social-buttons {
-    float: right;
     margin-top: 0;
 }
 
@@ -1053,7 +1184,7 @@ body.blurred {
 
 footer {
     padding: 50px 0;
-    background-color: #2C3E50;
+    background-color: #ab1d79;
     color: white;
 }
 
