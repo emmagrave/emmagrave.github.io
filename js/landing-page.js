@@ -151,3 +151,48 @@ function toggleFlip(element) {
     element.classList.toggle('flipped');
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector('.navbar-fixed-top');
+    const homeSection = document.querySelector('#home');
+    const aboutSection = document.querySelector('#about'); // Section "about" pour gérer le défilement
+
+    // Vérifier si les éléments existent
+    if (navbar && homeSection && aboutSection) {
+        window.addEventListener('scroll', () => {
+            const homeRect = homeSection.getBoundingClientRect();
+            const aboutRect = aboutSection.getBoundingClientRect();
+
+            // Ajouter une petite marge avant de faire apparaître la navbar
+            const threshold = 10; // Marge en pixels avant d'afficher la navbar
+
+            // Si la section #home est complètement passée (avec un seuil)
+            if (homeRect.bottom <= -threshold) {
+                navbar.classList.add('visible');
+                navbar.classList.remove('hidden');
+            } else if (homeRect.top >= 0) {
+                // Lorsque on revient vers le haut de la page (avant #home)
+                navbar.classList.add('hidden');
+                navbar.classList.remove('visible');
+            }
+
+            // Si on est dans la section #about, afficher la navbar même si #home est encore visible
+            if (aboutRect.top <= 0 && aboutRect.bottom > 0) {
+                navbar.classList.add('visible');
+                navbar.classList.remove('hidden');
+            }
+        });
+    }
+});
+
+
+window.addEventListener('load', () => {
+    const startTime = new Date().getTime();
+    const loadTime = new Date().getTime() - startTime; // Temps écoulé
+    const remainingTime = 2000 - loadTime;
+    // Ajouter la classe "loaded" au body pour déclencher l'animation CSS
+    setTimeout(() => {
+        document.body.classList.add('loaded'); // Masquer le préchargeur
+        document.getElementById('content').style.display = 'block'; // Afficher le contenu principal
+    }, Math.max(remainingTime, 0)); // Si la page a mis plus de 2s, aucun délai n'est ajouté
+});
+

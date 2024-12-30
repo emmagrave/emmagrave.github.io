@@ -17,11 +17,6 @@ Ce site présente certains de mes meilleurs travaux et les technologies que j’
 - [Jekyll](https://jekyllrb.com/) pour la génération de site statique
 - [GitHub Pages](https://pages.github.com/) pour l'hébergement
 
-## Comment lancer le site en local
-- Clonez le dépôt : `git clone https://github.com/emmagrave/emmagrave.github.io`
-- Accédez au dossier : `cd emmagrave.github.io`
-- Ouvrez le fichier `index.html` dans un navigateur.
-
 ## Contact
 Retrouvez-moi sur [LinkedIn](https://www.linkedin.com/in/emma-grave-8100752a2/) ou contactez-moi par [email](mailto:graveemma842@gmail.com).
 
