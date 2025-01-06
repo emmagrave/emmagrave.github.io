@@ -123,6 +123,12 @@ h6 {
     left: 900px; position: relative; top: 7px; color: white; font-weight: bold;
     font-size: 20px; opacity: 1; text-decoration: none;
 }
+
+@media (max-width: 767px) {
+    html, body {
+        overflow-x: hidden; /* Empêche le défilement horizontal */
+    }
+}
 /*---------------- HEADER ---------------*/
 
 #home {
@@ -272,27 +278,99 @@ h6 {
     left: 10px;
 }
 
-@media(max-width:767px) {
-    .intro-message {
-        padding-bottom: 15%;
+@media(max-width: 1200px) {
+    .navigation {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .v1_494, .v1_495, .v1_496, .v1_497 {
+        position: relative;
+        display: inline-block;
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 1024px) {
+    .v1_494, .v1_495, .v1_496, .v1_497 {
+        font-size: 18px;
     }
 
     .intro-message > h1 {
-        font-size: 3em;
+        font-size: 4em;
+        width: 400px;
+    }
+
+    .intro-message > h3 {
+        font-size: 1.2em;
+    }
+
+    .intro-divider {
+        width: 80%;
+    }
+}
+
+@media(max-width: 767px) {
+    .intro-header {
+        position: relative;
+    }
+
+    .navbar, .navbar-header, .navbar-collapse, .navigation {
+        display: none;
+    }
+
+    #home {
+        background-position: center center;
+    }
+
+    .intro-message > h1 {
+        font-size: 3.5em;
+        margin-left: 0;
+        width: 90%;
+    }
+
+    .intro-message > h3 {
+        font-size: 1.2em;
+    }
+
+    .intro-divider {
+        width: 250px;
     }
 
     ul.intro-social-buttons > li {
         display: block;
         margin-bottom: 20px;
-        padding: 0;
     }
 
     ul.intro-social-buttons > li:last-child {
         margin-bottom: 0;
     }
 
-    .intro-divider {
-        width: 100%;
+    .intro-message {
+        padding-bottom: 15%;
+    }
+}
+
+@media(max-width: 480px) {
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    .intro-message > h3 {
+        font-size: 1.1em;
+    }
+
+    .v1_494, .v1_495, .v1_496, .v1_497 {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    .navigation {
+        top: 40px;
+    }
+
+    .intro-message {
+        padding-bottom: 12%;
     }
 }
 
@@ -581,7 +659,7 @@ body.blurred {
     }
 
     #skills h2 {
-        font-size: 1.5em;
+        font-size: 2.5em;
     }
 }
 
@@ -642,47 +720,22 @@ body.blurred {
 }
 
 @media (max-width: 768px) {
-    #about .row {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    #about img {
-        grid-column: 1;
-        margin-top: 0;
-        margin-bottom: 20px;
-    }
-
-    #about .text {
-        grid-column: 1;
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
     #about {
-        display: grid;
-        padding: 10px;
-        grid-template-rows: 1fr 1fr;
-        margin-bottom: 220px;
+        flex-direction: column; /* Assure que tout reste empilé verticalement */
+        height: auto; /* Permet à la section de s'adapter à la taille du contenu */
+        padding: 20px; /* Ajoute de l'espace autour pour plus de lisibilité */
     }
 
     #about h2 {
-        font-size: 20px;
+        font-size: 2.5em;
+        margin-top: 50px;
     }
 
-    #about img {
-        max-width: 300px;
-        grid-row: 2;
-        margin-left: 25px;
-    }
-
-    #about .text {
-        font-size: 11px;
-        gap: 10px;
-        width: 300px;
-        margin-left: 10px;
-        grid-row: 1;
+    #about .part1, #about .part2 {
+        width: 100%; /* Utilise toute la largeur disponible */
+        text-align: center; /* Centre le texte pour un affichage uniforme */
+        top: 0px;
+        left: 0px;
     }
 }
 
@@ -703,8 +756,6 @@ body.blurred {
     font-size: 3em;
     text-shadow: 2px 2px 3px rgba(171,29,121,0.8);
     width: 800px;
-    padding: 10px 0px 10px 400px;
-    backdrop-filter: blur(10px);
     color: white;
 }
 
@@ -874,11 +925,28 @@ body.blurred {
         width: 230px;
         height: 230px;
     }
+
+    .card-back {
+        font-size: 0.9em; /* Réduction de la taille du texte */
+        padding: 15px; /* Marges réduites */
+        gap: 10px; /* Espacement ajusté */
+    }
+
+    .comp {
+        justify-content: center; /* Centre les icônes */
+        gap: 8px; /* Réduit l'espacement entre les icônes */
+        margin-top: 8px;
+    }
+
+    .comp img {
+        width: 25px; /* Taille réduite des icônes */
+        height: 25px;
+    }
 }
 
 @media (max-width: 480px) {
     #projects h2 {
-        font-size: 1.5em;
+        font-size: 2.5em;
         padding: 10px 0px 10px 0px;
     }
 
@@ -891,6 +959,22 @@ body.blurred {
         border-right: 0px;
         padding-left: 10px;
         padding-right: 10px;
+        gap: 8px;
+    }
+
+    .comp img {
+        width: 20px; /* Taille encore réduite des icônes */
+        height: 20px;
+        margin-bottom: 0px;
+        margin-right: 10px;
+    }
+
+    .projetsPerso .botVinted .comp img {
+        margin-bottom: 0px;
+    }
+
+    .projetsPerso .botVinted #botvinted-description {
+        font-size: 0.8em;
     }
 }
 
@@ -1100,67 +1184,64 @@ body.blurred {
 @media (max-width: 1024px) {
     #but1 .forum,
     #but1 .numeriquelles,
-    #but1 .jpo {
+    #but1 .jpo,
+    #but2 .forum,
+    #but2 .numeriquelles,
+    #but2 .jpo {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
         padding: 20px;
+    }
+
+    #but1 .forum .text, #but1 .numeriquelles .text, #but1 .jpo .text,
+    #but2 .forum .text, #but2 .numeriquelles .text, #but2 .jpo .text {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #but1 .img img, #but2 .img img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
     }
 }
 
 @media (max-width: 767px) {
     #news {
-        padding: 10px;
         margin-bottom: 20px;
-        padding-top: 30px;
+        padding: 30px 10px 10px 0px;
     }
 
     #but1 .forum,
     #but1 .numeriquelles,
-    #but1 .jpo {
-        grid-template-rows : auto auto;
+    #but1 .jpo,
+    #but2 .forum,
+    #but2 .numeriquelles,
+    #but2 .jpo {
+        grid-template-rows: auto;
         margin: 0;
         padding-left: 30px;
     }
 
-    #but1 .forum .img {
+    #but1 .forum .img, #but1 .numeriquelles .img, #but1 .jpo .img,
+    #but2 .forum .img, #but2 .numeriquelles .img, #but2 .jpo .img {
         grid-row: 1;
         margin: 0;
         padding: 0;
-
     }
-    #but1 .forum .text {
+
+    #but1 .forum .text, #but1 .numeriquelles .text, #but1 .jpo .text,
+    #but2 .forum .text, #but2 .numeriquelles .text, #but2 .jpo .text {
         grid-row: 2;
         grid-column: 1;
         margin: 0;
     }
 
-    #but1 .numeriquelles .img {
-        grid-row: 1;
-        margin: 0;
-        padding: 0;
-    }
-    #but1 .numeriquelles .text {
-        grid-row: 2;
-        grid-column: 1;
-        margin: 0;
-    }
-
-    #but1 .jpo .img {
-        grid-row: 1;
-        margin: 0;
-        padding: 0;
-    }
-    #but1 .jpo .text {
-        grid-row: 2;
-        grid-column: 1;
-        margin: 0;
-    }
-
-    #but1 .img img {
+    #but1 .img img, #but2 .img img {
         width: 100%;
     }
 
-    #but1 .text {
+    #but1 .text, #but2 .text {
         padding: 15px;
         font-size: 0.9em;
     }
@@ -1175,9 +1256,21 @@ body.blurred {
 }
 
 @media (max-width: 480px) {
-    #but1 {
+    #but1, #but2 {
         margin-left: 20px;
         text-align: center;
+    }
+
+    #but1 .forum,
+    #but1 .numeriquelles,
+    #but1 .jpo,
+    #but2 .forum,
+    #but2 .numeriquelles,
+    #but2 .jpo {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        width: 350px;
+        margin-top: 10px;
     }
 }
 
@@ -1253,38 +1346,32 @@ body.blurred {
     background-color: black;
 }
 
-@media(max-width:1199px) {
-    ul.banner-social-buttons {
-        float: left;
-        margin-top: 15px;
-    }
-}
-
-@media(max-width:767px) {
-    .banner h2 {
-        margin: 0;
-        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-        font-size: 3em;
-    }
-
-    ul.banner-social-buttons > li {
-        display: block;
-        margin-bottom: 20px;
-        padding: 0;
-    }
-
-    ul.banner-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
-
+@media (max-width: 768px) {
     .banner {
-        text-align: center;
+        height: auto;
     }
 
-    .banner ul {
-        padding-left: 120px;
+    .banner h2 {
+        margin-top: 50px;
+        font-size: 2.5em;
+    }
+
+    .banner .col {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    #contact-form {
+        max-width: 90%;
+    }
+
+    .banner .reseaux {
+        grid-column: 1;
+        margin-top: 20px;
     }
 }
+
+/*----------- FOOTER ----------------*/
 
 footer {
     padding: 50px 0;
