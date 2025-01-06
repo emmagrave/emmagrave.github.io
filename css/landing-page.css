@@ -785,6 +785,7 @@ body.blurred {
     text-shadow: 2px 2px 3px rgba(171,29,121,0.8);
     width: 800px;
     color: white;
+    padding-left: 400px;
 }
 
 .projetsPerso {
