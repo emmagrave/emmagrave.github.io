@@ -122,7 +122,8 @@ $('div.modal').on('show.bs.modal', function() {
 	}
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    const articles = document.querySelectorAll('.article');
     const progressBars = document.querySelectorAll(".progress-bar");
 
     // Fonction pour vérifier si un élément est visible à l'écran
@@ -131,7 +132,16 @@ document.addEventListener("DOMContentLoaded", function() {
         return rect.top < window.innerHeight && rect.bottom >= 0;
     }
 
-    // Fonction pour déclencher l'animation des barres de progression
+    // Fonction pour révéler les articles
+    function revealArticles() {
+        articles.forEach(article => {
+            if (isVisible(article)) {
+                article.classList.add('visible');
+            }
+        });
+    }
+
+    // Fonction pour animer les barres de progression
     function animateProgressBars() {
         progressBars.forEach(bar => {
             const progress = bar.getAttribute("data-progress");
@@ -142,10 +152,17 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Lancer l'animation lors du défilement
-    window.addEventListener("scroll", animateProgressBars);
-    animateProgressBars(); // Lancer l'animation si la section est déjà visible au chargement
+    // Ajouter l'événement de scroll pour détecter le défilement
+    window.addEventListener('scroll', function () {
+        revealArticles();
+        animateProgressBars();
+    });
+
+    // Vérifier immédiatement la visibilité au chargement de la page
+    revealArticles();
+    animateProgressBars();  // Lancer l'animation si les barres sont déjà visibles au chargement
 });
+
 
 function toggleFlip(element) {
     element.classList.toggle('flipped');
@@ -194,27 +211,6 @@ window.addEventListener('load', () => {
         document.body.classList.add('loaded'); // Masquer le préchargeur
         document.getElementById('content').style.display = 'block'; // Afficher le contenu principal
     }, Math.max(remainingTime, 0)); // Si la page a mis plus de 2s, aucun délai n'est ajouté
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const articles = document.querySelectorAll('.article');
-
-    function isVisible(el) {
-        const rect = el.getBoundingClientRect();
-        return rect.top < window.innerHeight && rect.bottom >= 0;
-    }
-
-    function revealArticles() {
-        articles.forEach(article => {
-            if (isVisible(article)) {
-                article.classList.add('visible');
-            }
-        });
-    }
-    window.addEventListener('scroll', revealArticles);
-
-    revealArticles();
 });
 
 
