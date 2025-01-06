@@ -1,5 +1,5 @@
 ---
 layout: landing
-title: EMMA GRAVE
+title: PORTFOLIO EMMA GRAVE
 subTitle: Développeuse Web  - Étudiante en informatique
 ---
