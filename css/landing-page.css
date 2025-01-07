@@ -124,11 +124,6 @@ h6 {
     font-size: 20px; opacity: 1; text-decoration: none;
 }
 
-@media (max-width: 767px) {
-    html, body {
-        overflow-x: hidden; /* Empêche le défilement horizontal */
-    }
-}
 /*---------------- HEADER ---------------*/
 
 #home {
