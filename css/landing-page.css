@@ -316,6 +316,7 @@ h6 {
 
     #home {
         background-position: center center;
+        overflow-x: hidden;
     }
 
     .intro-message > h1 {
@@ -735,6 +736,7 @@ body.blurred {
         flex-direction: column; /* Assure que tout reste empilé verticalement */
         height: auto; /* Permet à la section de s'adapter à la taille du contenu */
         padding: 20px; /* Ajoute de l'espace autour pour plus de lisibilité */
+        overflow-x: hidden;
     }
 
     #about h2 {
@@ -905,6 +907,10 @@ body.blurred {
 }
 
 @media (max-width: 768px) {
+    #projects {
+        overflow-x: hidden;
+    }
+
     .projetsPerso {
         grid-template-rows: 1fr 1fr 1fr;
         gap: 20px;
@@ -1373,6 +1379,7 @@ body.blurred {
 @media (max-width: 768px) {
     .banner {
         height: auto;
+        overflow-x: hidden;
     }
 
     .banner h2 {
