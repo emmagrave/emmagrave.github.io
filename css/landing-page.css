@@ -98,7 +98,7 @@ h6 {
 }
 
 .navbar-default {
-    background-color: #0a1e3f;
+    background-color: #070f1c;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -406,7 +406,7 @@ h6 {
 
 #skills h2 {
     font-size: 3em;
-    text-shadow: 2px 2px 3px rgba(171,29,121,0.8);
+    text-shadow: 2px 2px 3px rgb(122, 83, 100);
     text-align: center;
 }
 
@@ -474,7 +474,7 @@ h6 {
 .skill-name {
     font-weight: bold;
     display: inline-block;
-    width: 100px;
+    width: 150px;
     color: black;
 }
 
@@ -489,7 +489,7 @@ h6 {
 
 .progress-bar {
     height: 100%;
-    background-color: #cdc1bd;
+    background-color: rgb(194, 125, 154, 0.8);
     width: 0;
     border-radius: 5px;
     transition: width 1s ease;
@@ -520,7 +520,7 @@ h6 {
     align-items: center;
     padding: 15px 25px;
     background-color: #0a1e3f;
-    color: #f2a7c7;
+    color: white;
     text-decoration: none;
     font-size: 10px;
     border-radius: 10px;
@@ -671,71 +671,38 @@ body.blurred {
 }
 
 #about h2 {
-    margin-top: 150px;
     font-size: 3em;
     padding: 3px;
-    text-shadow: 2px 2px 3px rgba(171,29,121,0.8);
+    text-shadow: 2px 2px 3px rgb(122, 83, 100);
 }
 
 #about .row {
-    font-size: 13px;
     width: 100%;
 }
 
 .about {
     display: grid;
-    grid-template-columns: 0px 1fr;
+    grid-template-columns: 1fr 700px;
 }
 
 .about .image-about {
-    top: 100px;
-    position: relative;
-    left: 50px;
-}
-
-.about parts {
+    justify-content: center;
+    align-items: center;
     display: flex;
-    grid-column: 2;
 }
 
-#about .part1 {
-    position: relative;
-    width: 490px;
-    left: 450px;
-    top: 40px;
-    text-align: left;
-}
-
-#about .part1 p {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-#about .part2 {
-    position: relative;
-    width: 400px;
-    left: 800px;
-    top: -100px;
-    text-align: right;
+.about .parts {
+    margin-right: 150px;
+    margin-top: 70px;
     font-size: 16px;
 }
 
-#about a {
-    position: relative;
-    top: -100px;
-    color: #f2a7c7;
-    background-color: #0a1e3f;
-}
-
-#about a:hover {
-    transform: scale(1.2);
-}
 
 @media (max-width: 768px) {
     #about {
-        flex-direction: column; /* Assure que tout reste empilé verticalement */
-        height: auto; /* Permet à la section de s'adapter à la taille du contenu */
-        padding: 20px; /* Ajoute de l'espace autour pour plus de lisibilité */
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
         overflow-x: hidden;
     }
 
@@ -756,11 +723,13 @@ body.blurred {
         margin-bottom: 20px;
     }
 
-    #about .part1, #about .part2 {
-        width: 100%; /* Utilise toute la largeur disponible */
-        text-align: center; /* Centre le texte pour un affichage uniforme */
+    #about .parts {
+        width: 90%;
+        text-align: center;
         top: 0px;
-        left: 0px;
+        left: 20px;
+        position: relative;
+        margin-top: 20px;
     }
 }
 
@@ -779,7 +748,7 @@ body.blurred {
 
 #projects h2 {
     font-size: 3em;
-    text-shadow: 2px 2px 3px rgba(171,29,121,0.8);
+    text-shadow: 2px 2px 3px rgb(122, 83, 100);
     width: 800px;
     color: white;
     padding-left: 400px;
@@ -1315,7 +1284,7 @@ body.blurred {
     margin-top: 100px;
     margin-bottom: 50px;
     font-size: 3em;
-    text-shadow: 2px 2px 3px rgba(171,29,121,0.8);
+    text-shadow: 2px 2px 3px rgb(122, 83, 100);
 }
 
 .banner .col {
@@ -1364,7 +1333,7 @@ body.blurred {
 
 #contact-form button {
     background-color: #0a1e3f;
-    color: #f2a7c7;
+    color: white;
     padding: 0.75rem;
     font-size: 1rem;
     border: none;
@@ -1406,7 +1375,7 @@ body.blurred {
 
 footer {
     padding: 50px 0;
-    background-color: #0a1e3f;
+    background-color: #070f1c;
     color: white;
 }
 

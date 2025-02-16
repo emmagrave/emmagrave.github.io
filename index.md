@@ -1,5 +1,5 @@
 ---
 layout: landing
 title: PORTFOLIO EMMA GRAVE
-subTitle: Développeuse Web  - Étudiante en informatique
+subTitle: Développeuse Web  - Alternante chez Adexos
 ---
