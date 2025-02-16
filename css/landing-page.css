@@ -331,6 +331,8 @@ h6 {
 
     .intro-divider {
         width: 250px;
+        position: relative;
+        left: 1px;
     }
 
     ul.intro-social-buttons > li {
@@ -354,6 +356,9 @@ h6 {
 
     .intro-message > h3 {
         font-size: 1.1em;
+        width: 300px;
+        position: relative;
+        left: 1px;
     }
 
     .v1_494, .v1_495, .v1_496, .v1_497 {
