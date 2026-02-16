@@ -1,0 +1,34 @@
+/* ========== SECTION À PROPOS ========== */
+.about-content {
+  grid-template-columns: 1fr 1fr;
+}
+
+.about-text a {
+  transition: all 0.3s ease;
+
+  &:hover {
+    @apply text-dark border-b-dark;
+  }
+}
+
+.about-image {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+
+  img {
+    transition: transform 0.6s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.social-links a {
+  @apply w-[50px] h-[50px] flex items-center justify-center border-2 border-solid border-dark rounded-[50%];
+  transition: all 0.3s ease;
+
+  &:hover {
+    @apply bg-accent border-accent;
+    transform: translateY(-5px);
+  }
+}

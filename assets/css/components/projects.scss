@@ -1,0 +1,43 @@
+/* ========== SECTION PROJETS ========== */
+.projects-grid {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+  .project-card {
+    perspective: 1000px;
+
+    .project-inner {
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+
+      .project-front,
+      .project-back {
+        @apply absolute w-full h-full rounded-[20px] overflow-hidden;
+        backface-visibility: hidden;
+        box-shadow: 0 10px 40px var(--shadow);
+      }
+
+      .project-back {
+        @apply text-white p-10 flex flex-col justify-between;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        transform: rotateY(180deg);
+
+        .project-link {
+          transition: all 0.3s ease;
+
+          &:hover {
+            @apply bg-dark text-white;
+          }
+        }
+      }
+
+      .project-info {
+        @apply p-8 flex flex-col justify-between;
+        flex: 1;
+      }
+    }
+  }
+
+  .project-card.flipped .project-inner {
+    transform: rotateY(180deg);
+  }
+}

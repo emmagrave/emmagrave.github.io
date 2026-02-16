@@ -1,0 +1,67 @@
+/* ========== SECTION ACTUALITÉS ========== */
+.timeline {
+  &::before {
+    @apply absolute left-1/2 top-0 bottom-0 w-0.5;
+    content: '';
+    background: linear-gradient(180deg, transparent, var(--accent), transparent);
+    transform: translateX(-50%);
+  }
+
+  .timeline-year {
+    &::before {
+      @apply absolute left-1/2 top-1/2 w-5 h-5 bg-accent rounded-[50%] z-[2];
+      content: '';
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 0 6px var(--white);
+    }
+  }
+
+  .news-card {
+    animation: fadeIn 0.6s ease-out;
+
+    &:nth-child(odd) {
+      padding-right: calc(50% + 2rem);
+
+      .card-content::after {
+        @apply absolute -right-5 top-[30px] w-0 h-0 border-solid border-y-[10px] border-r-0 border-l-[20px]
+        border-y-transparent border-r-transparent border-l-white;
+        content: '';
+      }
+    }
+
+    &:nth-child(even) {
+      padding-left: calc(50% + 2rem);
+
+      .card-content::after {
+        @apply absolute -left-5 top-[30px] w-0 h-0 border-solid border-y-[10px] border-r-[20px] border-l-0
+        border-y-transparent border-r-white border-l-transparent;
+        content: '';
+      }
+    }
+
+    .card-content {
+      box-shadow: 0 10px 30px var(--shadow);
+      transition: all 0.4s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+.card-image {
+  @apply w-full h-[200px] object-cover rounded-[10px] mb-4;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

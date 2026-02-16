@@ -1,0 +1,52 @@
+/* ========== SECTION COMPÉTENCES ========== */
+.skills-grid {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+  .skill-category {
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .skill-progress {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &::after {
+      @apply absolute top-0 left-0 right-0 bottom-0;
+      content: '';
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.cv-section {
+  .cv-preview {
+    box-shadow: 0 20px 60px var(--shadow);
+    transition: transform 0.4s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  .download-btn {
+    transition: all 0.3s ease;
+
+    &:hover {
+      @apply bg-dark;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px var(--shadow);
+    }
+  }
+}

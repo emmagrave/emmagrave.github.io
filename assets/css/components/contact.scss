@@ -1,0 +1,30 @@
+/* ========== SECTION CONTACT ========== */
+#contact {
+  @apply text-white text-center py-24 px-16;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+#contact h2 {
+  @apply text-white;
+}
+
+#contact h2::after {
+  @apply bg-white;
+}
+
+.contact-content {
+  @apply max-w-[600px] my-0 mx-auto;
+}
+
+.contact-text {
+  @apply text-xl leading-loose mb-12;
+}
+
+.contact-email {
+  @apply text-[2rem] text-white no-underline border-b-2 border-0 border-solid border-white pb-2 inline-block;
+  transition: all 0.3s ease;
+}
+
+.contact-email:hover {
+  @apply border-b-dark text-dark;
+}

@@ -1,0 +1,61 @@
+/* ========== NAVIGATION ========== */
+nav {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.scrolled {
+    @apply py-4 px-16;
+    background: rgba(248, 245, 243, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px var(--shadow);
+  }
+
+  a {
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+
+    &::after {
+      @apply absolute -bottom-[5px] left-0 w-0 h-0.5 text-accent;
+      content: '';
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      @apply text-accent;
+    }
+
+    &:hover::after {
+      @apply w-full;
+    }
+  }
+}
+
+/* ========== HERO SECTION ========== */
+
+.social-sidebar {
+  transform: translateY(-50%);
+
+  a {
+    transition: all 0.3s ease;
+
+    &:hover {
+      @apply opacity-100;
+      transform: translateX(5px);
+    }
+  }
+}
+
+.hero-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-name {
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-title {
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero-subtitle {
+  animation: fadeInUp 1s ease-out 0.6s both;
+}

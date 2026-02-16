@@ -1,0 +1,207 @@
+/* ============================================================
+ALTERNANCE
+============================================================ */
+
+#alternance {
+  @apply bg-white;
+}
+
+.alternance-company {
+  @apply flex items-center justify-between mb-16 pb-8 border-b border-0 border-solid border-[#ece6e3] flex-wrap gap-4;
+}
+
+.company-name {
+  @apply block text-[3.5rem] leading-none text-dark mb-1;
+}
+
+.company-meta {
+  @apply block text-base text-gray tracking-[1px];
+}
+
+.role-badge {
+  @apply py-2.5 px-6 border-2 border-solid border-accent rounded-full text-base text-accent;
+}
+
+.progression-timeline {
+  @apply mb-20;
+}
+
+.timeline-intro {
+  @apply max-w-[700px] text-lg text-gray mb-14;
+}
+
+.phases {
+  @apply relative pl-10;
+}
+
+.phases::before {
+  @apply absolute left-2 top-2.5 bottom-2.5 w-0.5;
+  content: '';
+  background: linear-gradient(180deg, #d4a5ae, #ece6e3 90%, transparent);
+}
+
+.phase {
+  @apply relative pb-12 pl-10 opacity-0;
+  transform: translateX(-20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.phase.animated {
+  @apply opacity-100;
+  transform: translateX(0);
+}
+
+.phase:last-child {
+  @apply pb-0;
+}
+
+.phase-dot {
+  @apply absolute -left-10 top-1.5 w-[18px] h-[18px] rounded-full bg-primary border-[3px] border-solid border-white;
+  box-shadow: 0 0 0 2px #d4a5ae;
+  transition: transform 0.3s ease;
+}
+
+.phase-dot--current {
+  @apply bg-primary;
+  box-shadow: 0 0 0 2px #c9a0a8, 0 0 12px rgba(201, 160, 168, 0.5);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+.phase-dot--next {
+  @apply bg-white;
+  box-shadow: 0 0 0 2px #ccc;
+}
+
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 0 2px #c9a0a8, 0 0 8px rgba(201, 160, 168, 0.4); }
+  50% { box-shadow: 0 0 0 2px #c9a0a8, 0 0 18px rgba(201, 160, 168, 0.7); }
+}
+
+.phase-period {
+  @apply text-sm uppercase text-accent mb-2;
+  letter-spacing: 2px;
+}
+
+.phase-title {
+  @apply !font-allura !text-[2rem] text-dark mb-3 leading-tight;
+}
+
+.phase-desc {
+  @apply text-base text-gray max-w-[680px] mb-5;
+  line-height: 1.85;
+}
+
+/* Phase grisée = objectif futur */
+.phase-next .phase-title,
+.phase-next .phase-desc {
+  @apply text-gray;
+}
+
+/* Tags techniques */
+.phase-tags {
+  @apply flex flex-wrap gap-2 mb-3;
+}
+
+.tag {
+  @apply py-1 px-4 bg-dark rounded-full text-sm text-accent;
+  letter-spacing: 0.5px;
+}
+
+.tag--outlined {
+  @apply bg-transparent border border-dashed border-[#ccc];
+}
+
+.phase-highlight {
+  @apply inline-flex items-center gap-2 text-sm text-gray italic mt-1;
+}
+
+.phase-highlight svg {
+  @apply stroke-accent shrink-0;
+}
+
+/* Compétences acquises */
+.skills-acquired {
+  @apply opacity-0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
+}
+
+.skills-acquired.animated {
+  @apply opacity-100;
+  transform: translateY(0);
+}
+
+.skills-acquired-title {
+  @apply !text-4xl text-accent mb-8 block;
+}
+
+.skills-acquired-grid {
+  @apply grid gap-6;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.skill-card {
+  @apply p-8 border border-solid border-[#ece6e3] bg-[#faf8f7];
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-card:hover {
+  @apply bg-white border-accent;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.skill-card-icon {
+  @apply w-[52px] h-[52px] flex items-center justify-center bg-dark rounded-xl mb-5 text-accent;
+}
+
+.skill-card h4 {
+  @apply text-lg font-semibold mb-[0.6rem] text-dark;
+}
+
+.skill-card p {
+  @apply text-base leading-relaxed text-[#777];
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .alternance-header,
+  .alternance-body {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .alternance-header,
+  .alternance-body {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .alternance-company {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .company-name {
+    font-size: 2.5rem;
+  }
+
+  #alternance h2 {
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+  }
+
+  .phases {
+    padding-left: 1.5rem;
+  }
+
+  .phase {
+    padding-left: 1.5rem;
+  }
+
+  .skills-acquired-grid {
+    grid-template-columns: 1fr;
+  }
+}

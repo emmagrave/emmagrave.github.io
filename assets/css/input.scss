@@ -1,0 +1,234 @@
+@import "components/hero.scss";
+@import "components/about.scss";
+@import "components/news.scss";
+@import "components/skills.scss";
+@import "components/alternance.scss";
+@import "components/projects.scss";
+@import "components/contact.scss";
+@import "blob.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../assets/fonts/Merriweather-VariableFont.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Allura';
+    src: url('../assets/fonts/Allura-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    @apply m-0 p-0 box-border;
+}
+
+:root {
+    --primary: #d08a98;
+    --accent: #d4a5ae;
+    --light: #f8f5f3;
+    --white: #ffffff;
+    --gray: #6b6b6b;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+html {
+    @apply scroll-smooth overflow-x-hidden;
+}
+
+body {
+    @apply text-dark bg-light overflow-x-hidden leading-[1.6];
+    font-family: 'Crimson Pro', serif;
+}
+
+/* ========== SECTIONS COMMUNES ========== */
+section {
+    @apply py-32 px-16 relative;
+}
+
+h2 {
+    @apply !text-5xl !font-light !mb-16 text-center relative tracking-[8px];
+}
+
+h2::after {
+    @apply absolute -bottom-4 left-1/2 w-20 h-0.5 bg-accent;
+    content: '';
+    transform: translateX(-50%);
+}
+
+/* ========== MODAL CV ========== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    max-width: 500px;
+    text-align: center;
+    animation: modalFadeIn 0.4s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-content h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-btn-primary {
+    background: var(--accent);
+    color: var(--white);
+}
+
+.modal-btn-primary:hover {
+    background: var(--dark);
+    transform: translateY(-2px);
+}
+
+.modal-btn-secondary {
+    background: transparent;
+    border: 2px solid var(--dark);
+    color: var(--dark);
+}
+
+.modal-btn-secondary:hover {
+    background: var(--dark);
+    color: var(--white);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+    nav {
+        padding: 1.5rem 2rem;
+    }
+
+    nav ul {
+        gap: 2rem;
+    }
+
+    section {
+        padding: 6rem 2rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .news-card:nth-child(odd),
+    .news-card:nth-child(even) {
+        padding-left: 60px;
+        padding-right: 0;
+    }
+
+    .news-card:nth-child(odd) .card-content::after,
+    .news-card:nth-child(even) .card-content::after {
+        left: -20px;
+        right: auto;
+        border-width: 10px 20px 10px 0;
+        border-color: transparent var(--white) transparent transparent;
+    }
+
+    .timeline-year::before {
+        left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-name {
+        font-size: 3.5rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        letter-spacing: 6px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .social-sidebar {
+        position: static;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Scroll animations */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-animate].animated {
+    opacity: 1;
+    transform: translateY(0);
+}
